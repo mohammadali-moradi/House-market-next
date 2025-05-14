@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import database from '../../data/db.json'
 import House from '@/components/modules/House'
 
+
 function Houses() {
 
   const [houses, setHouses] = useState([...database.homes])
   const [search, setSearch] = useState("")
   const [sort, setSort] = useState("-1")
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
     const searchedHouse = database.homes.filter(house => house.title.includes(search))
@@ -14,30 +16,41 @@ function Houses() {
   }, [search])
 
   useEffect(() => {
-    switch(sort) {
+    switch (sort) {
       case "price": {
-        const sortedHouses = [...houses].sort((a, b) => a.price - b.price ) 
+        const sortedHouses = [...houses].sort((a, b) => a.price - b.price)
         setHouses(sortedHouses)
         break;
       }
       case "roomCount": {
-        const sortedHouses = [...houses].sort((a, b) => a.roomCount - b.roomCount ) 
+        const sortedHouses = [...houses].sort((a, b) => a.roomCount - b.roomCount)
         setHouses(sortedHouses)
         break;
       }
       case "meterage": {
-        const sortedHouses = [...houses].sort((a, b) => a.meterage - b.meterage ) 
+        const sortedHouses = [...houses].sort((a, b) => a.meterage - b.meterage)
         setHouses(sortedHouses)
         break;
       }
       default: {
         setHouses([...database.homes])
-      } 
+      }
     }
   }, [sort])
+
+  const paginationHandler = (event, page) => {
+    event.preventDefault()
+
+    const endIndex = 6 * page
+    const startIndex = endIndex - 6 
+
+    const paginatedHouses = database.homes.slice(startIndex, endIndex)
+    setHouses(paginatedHouses)
+  }
   return (
     <>
       <div className="home-section" id="houses">
+        {/* top bar /\/\/\/\/\/\ searchbar & filtering */}
         <div className="home-filter-search">
           <div className="home-filter">
             <select defaultValue={sort} onChange={e => setSort(e.target.value)}>
@@ -59,10 +72,21 @@ function Houses() {
           })}
 
         </div>
+
+        {/* pagination */}
         <ul className="pagination__list">
-          <li className="pagination__item"><a href="#" className=""></a></li>
-          <li className="pagination__item"><a href="#" className="">2</a></li>
-          <li className="pagination__item active"><a href="#" className="">1</a></li>
+          {Array.from({ length: Math.ceil(database.homes.length / 6 )}).map((item, index) => {
+            return (
+              <li className="pagination__item"
+                onClick={(event) => paginationHandler(event, index + 1)}
+                key={index}
+              >
+                <a href="#" className="">{index + 1}
+                </a>
+              </li>
+            )
+          })}
+
         </ul>
       </div>
     </>
