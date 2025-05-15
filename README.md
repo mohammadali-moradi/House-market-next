@@ -1,40 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+## 🌐 Live Demo
 
-## Getting Started
+👉 [house-market-next.vercel.app](https://vercel.com/mohammadali-moradis-projects/house-market-next)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Melk Market 🏠
+
+Melk Market is a modern single-page real estate listing application built with **Next.js**. It provides essential features such as real-time search, sorting, pagination, and a fast user experience using local JSON data. Ideal for learning and showcasing scalable UI in the real estate domain.
+
+---
+
+## 🚀 Features
+
+🔍 جستجوی سریع و بلادرنگ
+
+📊 مرتب‌سازی بر اساس معیارهای مختلف (قیمت، اندازه و...)
+
+📄 صفحه‌بندی لیست خانه‌ها
+
+⚡ ناوبری سریع و روان با معماری SPA
+
+📦 استفاده از داده‌های لوکال (فایل JSON) جهت نمایش دمو
+
+این پروژه نمونه‌ای از یک رابط کاربری کاربرپسند و مقیاس‌پذیر در حوزه پلتفرم‌های خرید و فروش ملک است.
+
+
+
+- 🔍 Real-time search functionality  
+- 📊 Sorting by different criteria (price, rooms, size, etc.)  
+- 📄 Pagination to browse listings easily  
+- ⚡ SPA experience with fast client-side routing  
+- 🗂 Local data source (JSON-based) for demonstration purposes  
+- 🎨 Built with React and Next.js  
+
+---
+
+## 📦 Tech Stack
+
+- **Next.js** (React Framework)  
+- **React**  
+- **CSS Modules**  
+- **JSON as local database**  
+
+---
+
+## 📁 Project Structure
+
+```
+melk-market/
+├── components/
+│   └── modules/
+│       └── House.js
+├── data/
+│   └── db.json
+├── pages/
+│   └── index.js
+│   └── houses.js
+├── styles/
+│   └── *.module.css
+├── public/
+│   └── images/
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 📍 Getting Started
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+# Clone the repo
+git clone https://github.com/your-username/melk-market.git
+cd melk-market
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+# Install dependencies
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Run development server
+npm run dev
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Live Demo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+👉 [melk-market.vercel.app](https://melk-market.vercel.app)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+---
