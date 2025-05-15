@@ -79,9 +79,3 @@ npm run dev
 ```
 
 ---
-
-## 🌐 Live Demo
-
-👉 [melk-market.vercel.app](https://melk-market.vercel.app)
-
----
